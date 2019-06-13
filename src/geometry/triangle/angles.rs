@@ -1,12 +1,4 @@
-const TOTAL_ANGLE: f64 = 180.0;
-
-pub struct Triangle {}
-
-pub struct Sides {
-    a: f64,
-    b: f64,
-    c: f64,
-}
+use super::*;
 
 pub struct Angles {
     ab: f64,
@@ -66,7 +58,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn angle_test() {
+    fn test() {
         let remaining_angle = Angles::remaining_angle(10.0, 20.0);
         assert_eq!(remaining_angle, 150.0);
 
