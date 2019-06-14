@@ -1,4 +1,4 @@
-use super::sides::Sides;
+use super::sides;
 
 pub struct SidesRatio {
     a: f32,
@@ -12,7 +12,7 @@ impl SidesRatio {
     }
 
     pub fn is_valid(self) -> bool {
-        Sides::is_valid(self as Sides)
+        sides::is_valid(self.a, self.b, self.c)
     }
 
     pub fn a(self) -> f32 {
