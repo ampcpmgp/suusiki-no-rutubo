@@ -1,8 +1,8 @@
 //! ```
 //! use suusiki_no_rutubo::geometry::triangle::{Angles};
 //!
-//! let angle = Angles::new(10.0, 20.0, 150.0);
-//! assert_eq!(angle.is_valid(), true);
+//! let angles = Angles::new(10.0, 20.0, 150.0);
+//! assert_eq!(angles.is_valid(), true);
 //! ```
 use super::*;
 
