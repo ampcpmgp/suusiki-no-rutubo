@@ -1,2 +1,2 @@
 # suusiki-no-rutubo
-"the melting pot of formulas"
+"The melting pot of formulas"

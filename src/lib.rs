@@ -1,7 +1,6 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
+//! "The melting pot of formulas"
+//!
+//! 数学・科学等で使われる数式を集めたものです。
+//!
+
+pub mod geometry;
