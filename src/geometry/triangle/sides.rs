@@ -1,3 +1,13 @@
+//! ```
+//! use suusiki_no_rutubo::geometry::triangle::{Sides};
+//!
+//! let sides = Sides::new(3.0, 4.0, 5.0);
+//! assert_eq!(sides.is_valid(), true);
+//!
+//! let sides = Sides::new(1.0, 1.0, 3.0);
+//! assert_eq!(sides.is_valid(), false);
+//! ```
+
 pub struct Sides {
     a: f64,
     b: f64,
@@ -5,16 +15,7 @@ pub struct Sides {
 }
 
 impl Sides {
-    /// ```
-    /// use suusiki_no_rutubo::geometry::triangle::{Sides};
-    ///
-    /// let sides = Sides::new(3.0, 4.0, 5.0);
-    /// assert_eq!(sides.is_valid(), true);
-    ///
-    /// let sides = Sides::new(1.0, 1.0, 3.0);
-    /// assert_eq!(sides.is_valid(), false);
-    /// ```
-    pub fn new(a: f64, b: f64, c: f64) -> Sides {
+    pub fn new(a: f64, b: f64, c: f64) -> Self {
         Sides { a, b, c }
     }
 
