@@ -1,3 +1,9 @@
+//! ```
+//! use suusiki_no_rutubo::geometry::triangle::{Angles};
+//!
+//! let angle = Angles::new(10.0, 20.0, 150.0);
+//! assert_eq!(angle.is_valid(), true);
+//! ```
 use super::*;
 
 pub struct Angles {
@@ -7,12 +13,6 @@ pub struct Angles {
 }
 
 impl Angles {
-    /// ```
-    /// use suusiki_no_rutubo::geometry::triangle::{Angles};
-    ///
-    /// let angle = Angles::new(10.0, 20.0, 150.0);
-    /// assert_eq!(angle.is_valid(), true);
-    /// ```
     pub fn new(ab: f64, bc: f64, ca: f64) -> Angles {
         Angles { ab, bc, ca }
     }
