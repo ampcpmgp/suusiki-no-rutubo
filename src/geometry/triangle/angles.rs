@@ -27,7 +27,7 @@ impl Angles {
         TOTAL_ANGLE - ab - bc
     }
 
-    pub fn is_valid(self) -> bool {
+    pub fn is_valid(&self) -> bool {
         return Self::is_valid_angle(self.ab)
             && Self::is_valid_angle(self.bc)
             && Self::is_valid_angle(self.ca)
@@ -42,14 +42,20 @@ impl Angles {
         }
     }
 
-    pub fn ab(self) -> f64 {
+    pub fn ab(&self) -> f64 {
         self.ab
     }
-    pub fn bc(self) -> f64 {
+    pub fn bc(&self) -> f64 {
         self.bc
     }
-    pub fn ca(self) -> f64 {
+    pub fn ca(&self) -> f64 {
         self.ca
+    }
+}
+
+impl PartialEq for Angles {
+    fn eq(&self, other: &Self) -> bool {
+        self.ab() == other.ab() && self.bc() == other.bc() && self.ca() == other.ca()
     }
 }
 
@@ -64,5 +70,13 @@ mod tests {
 
         let angle = Angles::new(10.0, 20.0, remaining_angle);
         assert_eq!(angle.is_valid(), true);
+    }
+
+    #[test]
+    fn eq() {
+        let angle1 = Angles::new(3.0, 2.0, 4.0);
+        let angle2 = Angles::new(3.0, 2.0, 4.0);
+
+        assert!(angle1 == angle2);
     }
 }
