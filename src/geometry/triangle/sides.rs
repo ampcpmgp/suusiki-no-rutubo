@@ -32,7 +32,7 @@ impl Sides {
         Sides { a, b, c }
     }
 
-    pub fn is_valid(self) -> bool {
+    pub fn is_valid(&self) -> bool {
         is_valid(self.a, self.b, self.c)
     }
 
