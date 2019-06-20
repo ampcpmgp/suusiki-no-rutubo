@@ -55,7 +55,29 @@ impl Angles {
 
 impl PartialEq for Angles {
     fn eq(&self, other: &Self) -> bool {
-        self.ab() == other.ab() && self.bc() == other.bc() && self.ca() == other.ca()
+        let self_angles = [self.ab, self.bc, self.ca];
+        let mut other_angles = [other.ab, other.bc, other.ca];
+        let length = 3;
+
+        for _ in 0..=length {
+            if self_angles == other_angles {
+                return true;
+            }
+
+            other_angles.rotate_left(1);
+        }
+
+        other_angles.reverse();
+
+        for _ in 0..=length {
+            if self_angles == other_angles {
+                return true;
+            }
+
+            other_angles.rotate_left(1);
+        }
+
+        return false;
     }
 }
 
@@ -74,9 +96,15 @@ mod tests {
 
     #[test]
     fn eq() {
-        let angle1 = Angles::new(3.0, 2.0, 4.0);
-        let angle2 = Angles::new(3.0, 2.0, 4.0);
+        let angle_base = Angles::new(3.0, 2.0, 4.0);
+        let angle_same = Angles::new(3.0, 2.0, 4.0);
+        let angle_reverse = Angles::new(4.0, 2.0, 3.0);
+        let angle_deviation = Angles::new(4.0, 3.0, 2.0);
+        let angle_another = Angles::new(4.0, 3.0, 3.0);
 
-        assert!(angle1 == angle2);
+        assert!(angle_base == angle_same);
+        assert!(angle_base == angle_reverse);
+        assert!(angle_base == angle_deviation);
+        assert!(angle_base != angle_another);
     }
 }
