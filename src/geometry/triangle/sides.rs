@@ -7,16 +7,14 @@
 //! let sides = Sides::new(1.0, 1.0, 3.0);
 //! assert_eq!(sides.is_valid(), false);
 //! ```
-use num_traits::{cast::FromPrimitive, float::Float};
-
 pub struct Sides {
     a: f64,
     b: f64,
     c: f64,
 }
 
-pub fn is_valid<T: Float + FromPrimitive>(a: T, b: T, c: T) -> bool {
-    let zero = T::from_f32(0.0).unwrap();
+pub fn is_valid(a: f64, b: f64, c: f64) -> bool {
+    let zero = 0.0;
 
     return a > zero
         && b > zero
