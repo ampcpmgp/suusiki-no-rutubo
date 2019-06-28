@@ -25,6 +25,6 @@ fn test_set() {
     let natural = Natural::new();
     let even = Even::new();
     let odd = Odd::new();
-    let one_digit_nums = Set::new([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-    let natural_even = Set::union(natural, even);
+    let one_digit_natural_nums = Set::new([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    let natural_even = Set::union(Natural, Even); // nextが持てない
 }
